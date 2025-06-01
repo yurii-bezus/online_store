@@ -14,6 +14,12 @@ export function markupCategories(categories) {
 }
 
 export function markupProducts(products) {
+  if (products.length === 0) {
+    refs.notFound.classList.add('not-found--visible');
+    return;
+  }
+  refs.notFound.classList.remove('not-found--visible');
+
   refs.allProducts.innerHTML = '';
   const markup = products
     .map(

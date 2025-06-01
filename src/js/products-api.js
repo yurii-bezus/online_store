@@ -17,3 +17,10 @@ export async function fetchProducts() {
   const response = await axios.get(url);
   return response.data.products;
 }
+
+export async function getProductsByCategory(category) {
+  const response = await axios.get(`products/category/${category}`);
+  console.log(response);
+
+  return response.data.products;
+}
